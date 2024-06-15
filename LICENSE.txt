@@ -1,3 +1,9 @@
+The original XKB project copying terms can be found here:
+
+https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/blob/master/COPYING?ref_type=heads
+
+I release my configurations under MIT-0
+
 MIT No Attribution
 
 Copyright 2024 carbon-starlight

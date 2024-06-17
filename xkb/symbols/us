@@ -856,6 +856,14 @@ xkb_symbols "colemak" {
     include "level3(ralt_switch)"
 };
 
+partial alphanumeric_keys
+xkb_symbols "colemak_extend" {
+    
+    include "us(colemak)"
+    include "ru(extend_layers)"
+    name[Group1]= "English (Colemak Extend)";
+};
+
 // Colemak-DH (ANSI) symbols for xkb on X.Org Server 7.x
 // 2014-10-25 by SteveP, https://colemakmods.github.io/mod-dh/
 

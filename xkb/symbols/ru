@@ -6,6 +6,39 @@
 // 2001/12/23 by Leon Kanter <leon@blackcatlinux.com>
 // 2005/12/09 Valery Inozemtsev <shrek@altlinux.ru>
 // 2018/07/15 @a13 (a.k.a. @dbvvmpg) and Stepanenko Andrey <ftvkyo2011@yandex.ru>
+// 2024/06/14 Dmitry Suvorov <github.com/carbon-starlight>
+
+// Layouts are being defined like this:
+
+// default partial alphanumeric_keys
+// xkb_symbols "my_layout_standard" {         	←─── The ID-name of the layout. Cannot contain spaces.
+//
+//     include "ru(common)"                   	←──┬ Import other layouts if you want. All keys defined there
+//                                            	   └ will be assigned, but can be overwritten.
+//     name[Group1]= "My Layout";             	←─── The full name of the layout. May contain spaces.
+
+//     key <AE01>	{[ 1, exclam  ]};             ←─── A [re]defined key
+
+// };
+
+// Keys are being defined in the following manner:
+
+//    key <AE01>	{[ 1, exclam, Home, NoSymbol  ]};
+//          ↑   	   ↑     ↑      ↑       ↑
+//          │        │     │      │       └──┬ AltGr+Shift. "NoSymbol" means nothing will happen unless
+//          │        │     │      │          └ this key was defined in any imported layout.
+//          │        │     │      └─── When a key is pressed with AltGr it will activate the "Home" key.
+//          │   	   │     └─── Level 2: the symbol that's shown if Shift is pressed
+//          │   	   └──┬ The symbol that's printed when pressing a key. See line 39 for all names.
+//          │   	      └ Use NoSymbol to overwrite the higher level without touching the old one.
+//          └──┬ The key ID: "A" means it's on main section, "E" means that it's the 4-th row from buttom (A-B-C-…), 
+//             └ "01" means it's the first key in the line excluding special ones (like Tab or CL)
+
+// For the layout to be displayed by the GUI selector it needs to be added to evdev.xml in usr/share/X11/xkb/rules/<>.
+
+// Some useful references regarding xkb names:
+// https://wiki.linuxquestions.org/wiki/List_of_Keysyms_Recognised_by_Xmodmap
+// https://superuser.com/questions/1460984/how-to-get-a-list-of-valid-x11-names-for-characters
 
 // Windows layout
 default partial alphanumeric_keys
@@ -169,7 +202,6 @@ xkb_symbols "diktor_extend" {
     include "ru(diktor)"
     include "ru(extend_layers)"
     name[Group1]= "Russian (Diktor Extend)";
-
 };
 
 partial alphanumeric_keys
@@ -215,8 +247,8 @@ xkb_symbols "extend_layers" {
 
     key <AC01>  {[          NoSymbol,         NoSymbol  ]};
     key <AC02>  {[          NoSymbol,         NoSymbol  ]};
-    key <AC03>  {[          NoSymbol,         NoSymbol  ]};
-    key <AC04>  {[          NoSymbol,         NoSymbol  ]};
+    key <AC03>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,   Shift_L  ]};
+    key <AC04>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol, Control_L  ]};
     key <AC05>  {[          NoSymbol,         NoSymbol  ]};
     key <AC06>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,      Next  ]};
     key <AC07>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,      Left  ]};
@@ -225,7 +257,7 @@ xkb_symbols "extend_layers" {
     key <AC10>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol, BackSpace  ]};
     key <AC11>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,      Menu  ]};
 
-    key <AB01>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,      Undo  ]};
+    key <AB01>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,      Undo,    Redo  ]};
     key <AB02>  {[          NoSymbol,         NoSymbol  ]};
     key <AB03>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,  XF86Copy  ]};
     key <AB04>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol, XF86Paste  ]};
@@ -234,6 +266,8 @@ xkb_symbols "extend_layers" {
     key <AB07>  {[          NoSymbol,         NoSymbol  ]};
     key <AB08>  {[          NoSymbol,         NoSymbol  ]};
     key <AB09>  {[          NoSymbol,         NoSymbol  ]};
+    
+    key <SPCE>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,    Return  ]};
 
 
     include "kpdl(comma)"
@@ -955,6 +989,15 @@ xkb_symbols "rulemak" {
     include "level3(ralt_switch)"
     include "capslock(backspace)"
     include "nbsp(level4)"
+};
+
+// #my-addition; TODO: finish marking all
+partial alphanumeric_keys
+xkb_symbols "rulemak_extend" {
+    
+    include "ru(rulemak)"
+    include "ru(extend_layers)"
+    name[Group1]= "Russian (Rulemak Extend)";
 };
 
 // Church Slavonic language layout

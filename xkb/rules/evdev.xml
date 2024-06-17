@@ -3031,6 +3031,12 @@
         </variant>
         <variant>
           <configItem>
+            <name>colemak_extend</name>
+            <description>English (Colemak Extend)</description>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
             <name>colemak_dh</name>
             <description>English (Colemak-DH)</description>
           </configItem>
@@ -5903,6 +5909,18 @@
         </languageList>
       </configItem>
       <variantList>
+        <variant>
+          <configItem>
+            <name>rulemak</name>
+            <description>Russian (phonetic, Colemak)</description>
+          </configItem>
+        </variant>
+        <variant>
+          <configItem>
+            <name>rulemak_extend</name>
+            <description>Russian (Rulemak Extend)</description>
+          </configItem>
+        </variant>
         <variant>
           <configItem>
             <name>phonetic</name>

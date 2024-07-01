@@ -232,32 +232,32 @@ xkb_symbols "extend_layers" {
     key <LSGT>  {[          NoSymbol,         NoSymbol  ]};  // <> key
 
     key <TLDE>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol  ]};
-    key <AD01>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol, Escape  ]};
+    key <AD01>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol, Escape, Escape  ]};
     key <AD02>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol, 0x1008ff78  ]};
     key <AD03>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol   ]};
     key <AD04>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol   ]};
     key <AD05>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol   ]};
-    key <AD06>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,  Prior  ]};
-    key <AD07>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,   Home  ]};
-    key <AD08>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,     Up  ]};
-    key <AD09>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,    End  ]};
-    key <AD10>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol, Delete  ]};
-    key <AD11>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,    Esc  ]};
+    key <AD06>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,  Prior,  Prior  ]};
+    key <AD07>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,   Home,   Home  ]};
+    key <AD08>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,     Up,     Up  ]};
+    key <AD09>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,    End,    End  ]};
+    key <AD10>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol, Delete, Delete  ]};
+    key <AD11>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol, Escape, Escape  ]};
     key <AD12>  {[          NoSymbol,         NoSymbol  ]};
-
+    
     key <AC01>  {[          NoSymbol,         NoSymbol  ]};
     key <AC02>  {[          NoSymbol,         NoSymbol  ]};
-    key <AC03>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,   Shift_L  ]};
-    key <AC04>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol, Control_L  ]};
+    key <AC03>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,   Shift_L,   Shift_L  ]};
+    key <AC04>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol, Control_L, Control_L  ]};
     key <AC05>  {[          NoSymbol,         NoSymbol  ]};
-    key <AC06>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,      Next  ]};
-    key <AC07>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,      Left  ]};
-    key <AC08>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,      Down  ]};
-    key <AC09>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,     Right  ]};
-    key <AC10>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol, BackSpace  ]};
-    key <AC11>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,      Menu  ]};
+    key <AC06>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,      Next,      Next  ]};
+    key <AC07>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,      Left,      Left  ]};
+    key <AC08>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,      Down,      Down  ]};
+    key <AC09>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,     Right,     Right  ]};
+    key <AC10>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol, BackSpace, BackSpace  ]};
+    key <AC11>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,      Menu,      Menu  ]};
 
-    key <AB01>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,      Undo,    Redo  ]};
+    key <AB01>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,      Undo,      Redo  ]};
     key <AB02>  {[          NoSymbol,         NoSymbol  ]};
     key <AB03>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,  XF86Copy  ]};
     key <AB04>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol, XF86Paste  ]};
@@ -267,7 +267,7 @@ xkb_symbols "extend_layers" {
     key <AB08>  {[          NoSymbol,         NoSymbol  ]};
     key <AB09>  {[          NoSymbol,         NoSymbol  ]};
     
-    key <SPCE>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,    Return  ]};
+    key <SPCE>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,    Return,    Return  ]};
 
 
     include "kpdl(comma)"

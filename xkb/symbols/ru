@@ -248,7 +248,6 @@ xkb_symbols "extend_layers" {
     key <AC01>  {[          NoSymbol,         NoSymbol  ]};
     key <AC02>  {[          NoSymbol,         NoSymbol  ]};
     key <AC03>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,   Shift_L,   Shift_L  ]};
-
     key <AC04> { symbols[Group1]=[Any       , Any       , Any       , Any       ,   // F
                     Control_L                   , Control_L                     ,   // <LCTL>
                     BackSpace                   , BackSpace                     ] , // Back
@@ -256,18 +255,9 @@ xkb_symbols "extend_layers" {
                     SetMods(mods=Control)       , SetMods(mods=Shift+Control)   ,   // Ctrl mod
                     NoAction()                  , NoAction()                    ] ,
                  repeat=yes     };  // QWE F, Cmk T
-
     key <AC05>  {[          NoSymbol,         NoSymbol  ]};
     key <AC06>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,      Next,      Next  ]};
-
-    key <AC07> { symbols[Group1]=[Any       , Any       , Any       , Any       ,   // J
-                    Left                        , Left                          ,   //  ←
-                    KP_1                        , U21D9                         ] , // KP_1   /   ↙ ⇙
-                 actions[Group1]=[NoAction(), NoAction(), NoAction(), NoAction(),
-                    Redirect(key=<LEFT>,clearmods=LevelFive), Redirect(key=<LEFT>,clearmods=LevelFive),     // <LEFT>
-                    NoAction()                  , NoAction()                    ] ,
-                 repeat=yes     };  // QWE J, Cmk N
-
+    key <AC07>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,      Left,      Left  ]};
     key <AC08>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,      Down,      Down  ]};
     key <AC09>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,     Right,     Right  ]};
     key <AC10>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol, BackSpace, BackSpace  ]};

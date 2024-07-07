@@ -273,9 +273,14 @@ xkb_symbols "extend_layers" {
     key <AB08>  {[          NoSymbol,         NoSymbol  ]};
     key <AB09>  {[          NoSymbol,         NoSymbol  ]};
     
-    key <SPCE>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,    Return,    Return  ]};
-
-
+    key <SPCE> { symbols[Group1]=[Any       , Any       , Any       , Any       ,   // Space
+                    Return                      , Return                        ,   // Enter
+                    space                       , nobreakspace                  ] , // Space
+                 actions[Group1]=[NoAction(),SetMods(mods=Shift),NoAction(),SetMods(mods=Shift),
+                    Redirect(key=<RTRN>,clearmods=LevelFive), Redirect(key=<RTRN>,clearmods=LevelFive),     // <RTRN>
+                    NoAction()                  , NoAction()                    ] ,
+                 repeat=yes     };  // Space1
+    
     include "kpdl(comma)"
 
     include "level3(ralt_switch)"

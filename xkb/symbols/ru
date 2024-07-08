@@ -234,8 +234,20 @@ xkb_symbols "extend_layers" {
     key <TLDE>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol  ]};
     key <AD01>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol, Escape, Escape  ]};
     key <AD02>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol, 0x1008ff78  ]};
-    key <AD03>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol   ]};
-    key <AD04>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol   ]};
+    key <AD03> { symbols[Group1]=[Any       , Any       , Any       , Any       ,   // E
+                    XF86Back                    , XF86Back                      ,   // BrBck
+                    End                         , KP_End                        ] , // End
+                 actions[Group1]=[NoAction(), NoAction(), NoAction(), NoAction(),
+                    Redirect(key=<I166>,clearmods=LevelFive), Redirect(key=<I166>,clearmods=LevelFive),     // <I166>(‡‡)
+                    NoAction()                  , NoAction()                    ] ,
+                 repeat=yes     };  // QWE E, Cmk F
+    key <AD04> { symbols[Group1]=[Any       , Any       , Any       , Any       ,   // R
+                    XF86Forward                 , XF86Forward                   ,   // BrFwd
+                    Delete                      , KP_Delete                     ] , // Del
+                 actions[Group1]=[NoAction(), NoAction(), NoAction(), NoAction(),
+                    Redirect(key=<I167>,clearmods=LevelFive), Redirect(key=<I167>,clearmods=LevelFive),     // <I167>(‡‡)
+                    NoAction()                  , NoAction()                    ] ,
+                 repeat=yes     };  // QWE R, Cmk P
     key <AD05>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol   ]};
     key <AD06>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,  Prior,  Prior  ]};
     key <AD07>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,   Home,   Home  ]};

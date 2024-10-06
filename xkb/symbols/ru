@@ -281,9 +281,10 @@ xkb_symbols "extend_layers" {
     key <AB04>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol, XF86Paste  ]};
     key <AB05>  {[          NoSymbol,         NoSymbol  ]};
     key <AB06>  {[          NoSymbol,         NoSymbol  ]};
-    key <AB07>  {[          NoSymbol,         NoSymbol  ]};
-    key <AB08>  {[          NoSymbol,         NoSymbol  ]};
-    key <AB09>  {[          NoSymbol,         NoSymbol  ]};
+    key <AB07>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,       minus,   underscore  ]};
+    key <AB08>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,   parenleft,   parenright  ]};
+    key <AB09>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol, bracketleft, bracketright  ]};
+    key <AB09>  {[          NoSymbol,         NoSymbol, NoSymbol, NoSymbol,   braceleft,   braceright  ]};
     
     key <SPCE> { symbols[Group1]=[Any       , Any       , Any       , Any       ,   // Space
                     Return                      , Return                        ,   // Enter
